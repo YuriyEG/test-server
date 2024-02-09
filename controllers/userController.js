@@ -5,6 +5,9 @@ class UserController {
     const { id } = req.query;
     res.json(id);
   }
+  async test(req, res) {
+    res.json({ test: "test" });
+  }
 }
 
 module.exports = new UserController();

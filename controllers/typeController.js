@@ -1,6 +1,7 @@
 class TypeController {
-  async create(req, res) {}
-  async getAll(req, res) {}
+  async getAll(req, res) {
+    res.json({ all: "all" });
+  }
 }
 
-module.exports = TypeController();
+module.exports = new TypeController();
