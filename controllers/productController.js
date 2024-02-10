@@ -12,10 +12,9 @@ class ProductController {
     return res.json(types);
   }
   async getOne(req, res) {
-    console.log(req);
-    // const type = await Type.findOne(1);
-    // return res.json(type);
-    return res.json(req);
+    const { id } = req.params;
+    const type = await Type.findOne(id);
+    return res.json(type);
   }
   // async registration(req, res) {}
   // async login(req, res) {}
