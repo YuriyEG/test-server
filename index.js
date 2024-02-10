@@ -27,9 +27,9 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use("/api", router);
-app.use("/test", (req, res) => {
-  res.json("test message");
-});
+// app.use("/test", (req, res) => {
+//   res.json("test message");
+// });
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "WORKING!!!" });
