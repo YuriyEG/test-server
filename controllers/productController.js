@@ -2,8 +2,8 @@ const { Type } = require("../models/models");
 
 class ProductController {
   async getAll(req, res) {
-    const type = await Type.findAll();
-    return res(type);
+    const types = await Type.findAll();
+    return res.json(types);
   }
   // async registration(req, res) {}
   // async login(req, res) {}
