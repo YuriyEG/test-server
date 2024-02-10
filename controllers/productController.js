@@ -12,7 +12,7 @@ class ProductController {
     return res.json(types);
   }
   async getOne(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     const type = await Type.findOne(id);
     res.json(type);
   }
