@@ -15,7 +15,7 @@ class ProductController {
     // const { id } = req.params;
     // const type = await Type.findOne({ id });
     // return res.json(type);
-    return res.json(req);
+    return res.json("stroka");
   }
   // async registration(req, res) {}
   // async login(req, res) {}
