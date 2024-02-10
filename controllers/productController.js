@@ -2,12 +2,12 @@ const { Type, Product } = require("../models/models");
 
 class ProductController {
   async getAll(req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept,recording-session"
-    );
-    res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
+    // res.header("Access-Control-Allow-Origin", "*");
+    // res.header(
+    //   "Access-Control-Allow-Headers",
+    //   "Origin, X-Requested-With, Content-Type, Accept,recording-session"
+    // );
+    // res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
     const products = await Product.findAll();
     return res.json(products);
   }
