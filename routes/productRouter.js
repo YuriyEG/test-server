@@ -7,7 +7,7 @@ router.get("/", productController.getAll);
 // router.post("/login", productController.login);
 // router.get("/auth", productController.check);
 
-router.post("/", productController.create);
+router.post("/create", productController.create);
 router.delete("/:id", productController.delete);
 
 module.exports = router;
