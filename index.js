@@ -11,19 +11,6 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept,recording-session"
-  );
-  res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
-  next();
-});
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
 app.use(express.json());
 app.use("/api", router);
 app.use("/test", (req, res) => {
