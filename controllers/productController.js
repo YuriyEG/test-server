@@ -22,8 +22,9 @@ class ProductController {
   }
 
   async create(req, res) {
-    const { name, price, count } = req.body;
-    const product = await Product.create({ name, price, count });
+    const { name, price, rating, img, count } = req.body;
+    const product = await Product.create({ name, price, rating, img, count });
+
     return res.json(product);
   }
   async delete(req, res) {
