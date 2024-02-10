@@ -3,7 +3,7 @@ const { Type } = require("../models/models");
 class ProductController {
   async getAll(req, res) {
     const type = await Type.findAll();
-    return res.json(type);
+    return res(type);
   }
   // async registration(req, res) {}
   // async login(req, res) {}
