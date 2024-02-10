@@ -8,8 +8,8 @@ class ProductController {
       "Origin, X-Requested-With, Content-Type, Accept,recording-session"
     );
     res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
-    const types = await Type.findAll();
-    return res.json(types);
+    const product = await Product.findAll();
+    return res.json(products);
   }
   async getOne(req, res) {
     const { id } = req.params;
