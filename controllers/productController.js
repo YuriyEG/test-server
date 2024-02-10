@@ -14,7 +14,11 @@ class ProductController {
   async getOne(req, res) {
     const { id } = req.params;
     const product = await Product.findOne({ where: { id } });
-    return res.json(product);
+    if (product) {
+      return res.json(product);
+    } else {
+      return res.json({ message: "Not found " + id });
+    }
   }
 
   async create(req, res) {
