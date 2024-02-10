@@ -12,8 +12,8 @@ class ProductController {
     return res.json(types);
   }
   async getOne(req, res) {
-    const { id } = req.params;
-    const type = await Type.findOne({ id });
+    console.log(req);
+    const type = await Type.findOne({ 1 });
     return res.json(type);
   }
   // async registration(req, res) {}
