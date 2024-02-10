@@ -13,8 +13,9 @@ class ProductController {
   }
   async getOne(req, res) {
     console.log(req);
-    const type = await Type.findOne(1);
-    return res.json(type);
+    // const type = await Type.findOne(1);
+    // return res.json(type);
+    return res.json("mockData");
   }
   // async registration(req, res) {}
   // async login(req, res) {}
