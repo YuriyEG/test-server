@@ -20,6 +20,12 @@ class ProductController {
     const { name } = req.body;
     // const type = await Type.create({ name });
     // return res.json(type);
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept,recording-session"
+    );
+    res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
     res.json({ result: "create" });
   }
   async delete(req, res) {
