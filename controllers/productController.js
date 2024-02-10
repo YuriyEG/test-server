@@ -19,7 +19,7 @@ class ProductController {
   async create(req, res) {
     const { name } = req.body;
     const type = await Type.create({ name });
-    return res.json({ name: name });
+    return res.json(Type);
   }
   async delete(req, res) {
     const { id } = req.query;
