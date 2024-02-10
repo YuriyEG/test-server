@@ -36,17 +36,6 @@ const Product = sequelize.define("product", {
   count: { type: DataTypes.INTEGER, defaultValue: 0 },
 });
 
-// const Product = sequelize.define("product", {
-//   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-//   name: { type: DataTypes.STRING, unique: true, allowNull: false },
-//   producer: { type: DataTypes.STRING, unique: false, allowNull: false },
-//   about: { type: DataTypes.STRING, unique: false, allowNull: false },
-//   price: { type: DataTypes.INTEGER, allowNull: false },
-//   rating: { type: DataTypes.INTEGER, defaultValue: 0 },
-//   img: { type: DataTypes.STRING, allowNull: false },
-//   count: { type: DataTypes.INTEGER, defaultValue: 0 },
-// });
-
 const Type = sequelize.define("type", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   name: { type: DataTypes.STRING, unique: true, allowNull: false },
