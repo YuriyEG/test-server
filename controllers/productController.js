@@ -5,11 +5,11 @@ class ProductController {
     const type = await Type.findAll();
     return res.json(type);
   }
-  async registration(req, res) {}
-  async login(req, res) {}
-  async check(req, res) {
-    res.json({ check: "check" });
-  }
+  // async registration(req, res) {}
+  // async login(req, res) {}
+  // async check(req, res) {
+  //   res.json({ check: "check" });
+  // }
   async create(req, res) {
     const { name } = req.body;
     const type = await Type.create({ name });
