@@ -18,15 +18,15 @@ class ProductController {
   // }
   async create(req, res) {
     const { name } = req.body;
-    const type = await Type.create({ name });
+    // const type = await Type.create({ name });
 
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept,recording-session"
-    );
-    res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
-    return res.json(type);
+    // res.header("Access-Control-Allow-Origin", "*");
+    // res.header(
+    //   "Access-Control-Allow-Headers",
+    //   "Origin, X-Requested-With, Content-Type, Accept,recording-session"
+    // );
+    // res.header("Access-Control-Allow-Methods", "DELETE, POST, GET");
+    return res.json({ name: name });
   }
   async delete(req, res) {
     const { id } = req.query;
