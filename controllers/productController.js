@@ -17,8 +17,8 @@ class ProductController {
   //   res.json({ check: "check" });
   // }
   async create(req, res) {
-    const { name, price, rating } = req.body;
-    const type = await Type.create({ name, price, rating });
+    const { name, price, count } = req.body;
+    const type = await Type.create({ name, price, count });
     return res.json(type);
   }
   async delete(req, res) {
