@@ -15,7 +15,7 @@ class ProductController {
     console.log(req);
     // const type = await Type.findOne(1);
     // return res.json(type);
-    return res.json("mockData");
+    return res.json(req);
   }
   // async registration(req, res) {}
   // async login(req, res) {}
