@@ -13,6 +13,10 @@ app.use(cors());
 
 app.use(express.json());
 app.use("/api", router);
+app.use("/test", (req, res) => {
+  res.json("test message");
+});
+
 app.get("/", (req, res) => {
   res.status(200).json({ message: "WORKING!!!" });
 });
