@@ -18,7 +18,10 @@ app.use((req, res, next) => {
     // "Origin, X-Requested-With, Content-Type, Accept",
     "Content-Type"
   );
-  res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "PUT, GET, POST, DELETE, OPTIONS, TRACE"
+  );
   next();
 });
 
