@@ -29,13 +29,6 @@ class ProductController {
   }
   async delete(req, res) {
     const { id } = req.params;
-    // User.destroy({
-    //   where: {
-    //     name: "Bob"
-    //   }
-    // }).then((res) => {
-    //   console.log(res);
-    // });
     const product = await Product.destroy({ where: { id } });
     return res.json(product);
   }
