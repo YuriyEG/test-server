@@ -28,7 +28,7 @@ class ProductController {
     return res.json(product);
   }
   async delete(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     // User.destroy({
     //   where: {
     //     name: "Bob"
