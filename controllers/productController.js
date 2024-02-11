@@ -29,7 +29,14 @@ class ProductController {
   }
   async delete(req, res) {
     const { id } = req.query;
-    const product = await Product.findOne(id);
+    // User.destroy({
+    //   where: {
+    //     name: "Bob"
+    //   }
+    // }).then((res) => {
+    //   console.log(res);
+    // });
+    const product = await Product.destroy({ where: { id } });
     return res.json(product);
   }
 }
