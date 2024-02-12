@@ -57,11 +57,6 @@ const DeviceInfo = sequelize.define("device_info", {
   description: { type: DataTypes.STRING, allowNull: false },
 });
 
-const Test = sequelize.define("test", {
-  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-  name: { type: DataTypes.INTEGER, unique: true, allowNull: false },
-});
-
 User.hasOne(Basket);
 Basket.belongsTo(User);
 
@@ -100,5 +95,4 @@ module.exports = {
   TypeBrand,
   DeviceInfo,
   Product,
-  Test,
 };
