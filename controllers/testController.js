@@ -1,31 +1,31 @@
-const { Type, Product } = require("../models/models");
+const { Test } = require("../models/models");
 
-class ProductController {
+class TestController {
   async getAll(req, res) {
-    const products = await Product.findAll();
-    return res.json(products);
+    const tests = await Test.findAll();
+    return res.json(tests);
   }
   async getOne(req, res) {
     const { id } = req.params;
-    const product = await Product.findOne({ where: { id } });
-    if (product) {
-      return res.json(product);
+    const test = await Test.findOne({ where: { id } });
+    if (test) {
+      return res.json(test);
     } else {
       return res.json({ message: "Not found " + id });
     }
   }
 
   async create(req, res) {
-    const { name, price, rating, img, count } = req.body;
-    const product = await Product.create({ name, price, rating, img, count });
+    const { name } = req.body;
+    const test = await Test.create({ name });
 
-    return res.json(product);
+    return res.json(test);
   }
   async delete(req, res) {
     const { id } = req.params;
-    const product = await Product.destroy({ where: { id } });
-    return res.json(product);
+    const test = await Test.destroy({ where: { id } });
+    return res.json(test);
   }
 }
 
-module.exports = new ProductController();
+module.exports = new TestController();
