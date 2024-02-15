@@ -51,10 +51,34 @@ const Rating = sequelize.define("rating", {
   rate: { type: DataTypes.INTEGER, allowNull: false },
 });
 
+const Sklad = sequelize.define("sklad", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  name: { type: DataTypes.INTEGER, allowNull: false },
+});
+
 const DeviceInfo = sequelize.define("device_info", {
   id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   title: { type: DataTypes.STRING, allowNull: false },
   description: { type: DataTypes.STRING, allowNull: false },
+});
+
+const Nomenclature = sequelize.define("nomenclature", {
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+  tradeNameList: { type: DataTypes.ARRAY(DataTypes.STRING), allowNull: true },
+  internationalNonProprietaryName: { type: DataTypes.STRING, allowNull: false },
+  esklpTechnicalTask: { type: DataTypes.STRING, allowNull: false },
+  emissionType: { type: DataTypes.STRING, allowNull: false },
+  concentration: { type: DataTypes.STRING, allowNull: true },
+  concentrationUnit: { type: DataTypes.STRING, allowNull: true },
+  primaryPackageVolume: { type: DataTypes.DOUBLE, allowNull: false },
+  primaryPackageVolumeUnit: { type: DataTypes.STRING, allowNull: false },
+  unitForOrder: { type: DataTypes.STRING, allowNull: false },
+  vitalFederal: { type: DataTypes.BOOLEAN, allowNull: false },
+  vitalRegional: { type: DataTypes.BOOLEAN, allowNull: false },
+  hasAnalogues: { type: DataTypes.BOOLEAN, allowNull: false },
+  primaryPackageMaxDoze: { type: DataTypes.STRING, allowNull: true },
+  codeJECFA: { type: DataTypes.STRING, allowNull: true },
+  esklpConcentrationUnit: { type: DataTypes.STRING, allowNull: false },
 });
 
 User.hasOne(Basket);
@@ -95,4 +119,6 @@ module.exports = {
   TypeBrand,
   DeviceInfo,
   Product,
+  Sklad,
+  Nomenclature,
 };
