@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 const express = require("express");
 const sequelize = require("./db");
 const models = require("./models/models");
@@ -34,6 +35,8 @@ app.use("/test", (req, res) => {
 app.get("/", (req, res) => {
   res.status(200).json({ message: "WORKING!!!" });
 });
+
+app.use(errorHandler);
 const start = async () => {
   try {
     await sequelize.authenticate();
